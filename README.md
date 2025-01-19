@@ -12,7 +12,7 @@ Local build:
 
 
 Build Guide:
-1. Install repo and rsync 
+1. Install required package
 
     UBUNTU/DEBIAN:
     ```
