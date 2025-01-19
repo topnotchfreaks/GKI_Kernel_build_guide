@@ -47,7 +47,7 @@ Build Guide:
     ```
     LTO=thin BUILD_CONFIG=msm-kernel/build.config.gki.aarch64 build/build.sh > logs.txt
     ```
-    ***Note: you can costumize LTO with thin or full. use full if you have beefy pc specs or good vps. > symbol is used to pipe the build logs to desired file. in this context is logs.txt (easier to notice error if theres some)***
+    ***Note: you can customize LTO with thin or full. use full if you have beefy pc specs or good vps. > symbol is used to pipe the build logs to desired file. in this context is logs.txt (easier to notice error if theres some)***
 
 7. Collect the Kernel "Image" file
     ```
