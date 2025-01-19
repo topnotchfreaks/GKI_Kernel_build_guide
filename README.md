@@ -1,5 +1,3 @@
-by belowzeroiq
-
 Stuff to prepare:
 1. VPS servers or use gitpod with free plan (need github account to create account on gitpod)
 2. PC or laptop to build locally or to control the VPS
@@ -17,43 +15,41 @@ Build Guide:
 1. Install repo and rsync 
 
     UBUNTU/DEBIAN:
-    '''sudo apt update && sudo apt install repo rsync -y'''
-
+    ```
+    sudo apt update && sudo apt install repo rsync -y
+    ```
     ARCH:
+    ```
+    sudo pacman -Sy
+    ```
+    ```
+    sudo pacman -S rsync repo
+    ```
 
-    '''sudo pacman -Sy'''
-
-    '''sudo pacman -S rsync repo'''
-
-2. clone this (insert link) repo using
-
-    '''repo init -u "link" --depth=1''' (ignore quotation mark)
-
-    '''repo sync -j4''' (4 is how much jobs you want to initiate. usually i do 10)
-
-    //Note: --depth=1 is used to save up storage. this is perfect if you just want to build and not changing anything.
+3. Clone manifest repo using
+    ```
+    repo init -u https://github.com/topnotchfreaks/clo_kernel_manifest -b guide --depth=1 
+    ```
+    ```
+    repo sync -j8
+    ```
+    ***Note: --depth=1 is used to save up storage. this is perfect if you just want to build and not changing anything.***
 
 4. Open the kernel_platform directory
+    ```
+    cd kernel_platform
+    ```
 
-    '''cd kernel_platform'''
+6. Build using
+    ```
+    LTO=thin BUILD_CONFIG=msm-kernel/build.config.gki.aarch64 build/build.sh > logs.txt
+    ```
+    ***Note: you can costumize LTO with thin or full. use full if you have beefy pc specs or good vps. > symbol is used to pipe the build logs to desired file. in this context is logs.txt (easier to notice error if theres some)***
 
-5. build using
+7. Collect the Kernel "Image" file
+    ```
+    cd out/dist
+    ```
+    ***Note: Kernel files Usually named "Image" inside dist directory***
 
-    '''LTO=thin BUILD_CONFIG=msm-kernel/build.config.gki.aarch64 build/build.sh > logs.txt'''
-
-    //Note:
-    // you can costumize LTO with thin or full. use full if you have beefy pc specs or good vps
-    // > symbol is used to pipe the build logs to desired file. in this context is logs.txt (easier to notice error if theres some)
-
-6. Collect the Kernel "Image" file
-
-    '''cd out/dist'''
-
-    //Kernel files Usually named "Image" inside dist directory
-
-7. import Image to anykernel3 zip and flash!!
-
-
-Credits:
-Codelinaro
-ACK(Google)
+8. Import Image to anykernel3 zip and flash!!
