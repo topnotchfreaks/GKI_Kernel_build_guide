@@ -36,7 +36,7 @@ Build Guide:
     ```
     repo sync -j8
     ```
-    ***Note: --depth=1 is used to save up storage. this is perfect if you just want to build and not changing anything.***
+    **Note: --depth=1 is used to save up storage. this is perfect if you just want to build and not changing anything.**
 
 5. Open the kernel_platform directory
     ```
@@ -47,12 +47,12 @@ Build Guide:
     ```
     LTO=thin BUILD_CONFIG=msm-kernel/build.config.gki.aarch64 build/build.sh > logs.txt
     ```
-    ***Note: you can customize LTO with thin or full. use full if you have beefy pc specs or good vps. > symbol is used to pipe the build logs to desired file. in this context is logs.txt (easier to notice error if theres some)***
+    **Note: you can customize LTO with thin or full. use full if you have beefy pc specs or good vps. > symbol is used to pipe the build logs to desired file. in this context is logs.txt (easier to notice error if theres some)**
 
 7. Collect the Kernel "Image" file
     ```
     cd out/dist
     ```
-    ***Note: Kernel files Usually named "Image" inside dist directory***
+    **Note: Kernel files Usually named "Image" inside dist directory**
 
 8. Import Image to anykernel3 zip and flash!!
