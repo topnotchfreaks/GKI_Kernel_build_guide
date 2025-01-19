@@ -28,6 +28,9 @@ Build Guide:
 
 3. Clone manifest repo using
     ```
+    git config --global user.name "YourName" && git config --global user.email "you@example.com"
+    ```
+    ```
     repo init -u https://github.com/topnotchfreaks/clo_kernel_manifest -b guide --depth=1 
     ```
     ```
@@ -35,7 +38,7 @@ Build Guide:
     ```
     ***Note: --depth=1 is used to save up storage. this is perfect if you just want to build and not changing anything.***
 
-4. Open the kernel_platform directory
+5. Open the kernel_platform directory
     ```
     cd kernel_platform
     ```
